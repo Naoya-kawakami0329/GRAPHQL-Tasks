@@ -16,6 +16,6 @@ dueDate:string;
 status:"NOT_STARTED" | "IN_PROGRESS" |"COMPLETRD";
 
 @Field({nullable:true})
-description:string;
+description?:string;
 
 }
