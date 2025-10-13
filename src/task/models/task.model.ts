@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from "@nestjs/graphql";
+import { Status } from "generated/prisma";
 
 
 @ObjectType()
@@ -13,9 +14,14 @@ name:string;
 dueDate:string;
 
 @Field()
-status:"NOT_STARTED" | "IN_PROGRESS" |"COMPLETRD";
+status:Status;
 
 @Field({nullable:true})
 description?:string;
 
+@Field()
+createdAt:Date;
+
+@Field()
+updatedAt:Date;
 }
